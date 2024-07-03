@@ -1,34 +1,64 @@
-import Avatar from "./avatar";
-import CoverImage from "./cover-image";
-import DateFormatter from "./date-formatter";
-import { PostTitle } from "@/app/_components/post-title";
-import { type Author } from "@/interfaces/author";
+import React from "react";
+import { Box, Heading, Tag, HStack, Text, Flex } from "@chakra-ui/react";
+import { GlossaryItem } from "@/interfaces/glossaryItem";
 
-type Props = {
-  title: string;
-  coverImage: string;
-  date: string;
-  author: Author;
+interface PostHeaderProps {
+  item: GlossaryItem;
+}
+
+const PostHeader: React.FC<PostHeaderProps> = ({ item }) => {
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty.toLowerCase()) {
+      case "beginner":
+        return "green";
+      case "intermediate":
+        return "yellow";
+      case "advanced":
+        return "red";
+      default:
+        return "gray";
+    }
+  };
+
+  return (
+    <Box mb={6}>
+      <Heading as="h1" size="xl" mb={4}>
+        {item.title}
+      </Heading>
+
+      <Flex align="center" mb={4}>
+        <Box
+          display="inline-flex"
+          alignItems="center"
+          bg={`${getDifficultyColor(item.difficulty)}.100`}
+          color={`${getDifficultyColor(item.difficulty)}.800`}
+          px={3}
+          py={1}
+          borderRadius="full"
+          fontSize="sm"
+          fontWeight="medium"
+        >
+          <Box
+            as="span"
+            w={2}
+            h={2}
+            borderRadius="full"
+            bg={`${getDifficultyColor(item.difficulty)}.500`}
+            mr={2}
+          />
+          <Text>{item.difficulty}</Text>
+        </Box>
+      </Flex>
+
+      <HStack spacing={2} wrap="wrap">
+        {item.tags.map((tag, index) => (
+          <Tag key={index} size="md" variant="subtle" colorScheme="blue">
+            {tag}
+          </Tag>
+        ))}
+      </HStack>
+    </Box>
+  );
 };
 
-export function PostHeader({ title, coverImage, date, author }: Props) {
-  return (
-    <>
-      <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-        <Avatar name={author.name} picture={author.picture} />
-      </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-          <Avatar name={author.name} picture={author.picture} />
-        </div>
-        <div className="mb-6 text-lg">
-          <DateFormatter dateString={date} />
-        </div>
-      </div>
-    </>
-  );
-}
+export default PostHeader;
