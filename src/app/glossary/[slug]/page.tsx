@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllGlossaryItems, getGlossaryItemBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Container from "@/app/_components/container";
 import { PostBody } from "@/app/_components/post-body";
 import PostHeader from "@/app/_components/post-header";
 import { Providers } from "@/app/providers";
@@ -20,12 +19,11 @@ export default async function GlossaryItem({ params }: Params) {
     <Providers>
       <main>
         {/* <Alert preview={glossaryItem.preview} /> */}
-        <Container>
+
           <article className="mb-32">
             <PostHeader item={glossaryItem} />
             <PostBody content={content} />
           </article>
-        </Container>
       </main>
     </Providers>
   );

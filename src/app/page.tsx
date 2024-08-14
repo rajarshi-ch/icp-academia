@@ -1,4 +1,4 @@
-import Container from "@/app/_components/container";
+
 import BasicSection from "@/app/_components/home/basic-section";
 import { getRandomGlossaryItem } from "@/lib/api";
 import Hero from "./_components/home/hero";
@@ -15,14 +15,14 @@ export default function Index() {
   return (
     <Providers>
       <main>
-        <Container>
+
           <Hero />
           <CoinPriceMarquee />
           <BasicSection glossaryTerm={glossaryTerm}/>
           <LearnICPSection />
           <IcpCoinsSection />
           <FaqSection />
-        </Container>
+
       </main>
     </Providers>
   );
