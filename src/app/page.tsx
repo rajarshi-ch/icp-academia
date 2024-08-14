@@ -1,31 +1,22 @@
 import Container from "@/app/_components/container";
 import { HeroPost } from "@/app/_components/hero-post";
-import MoreStories from "@/app/_components/more-stories";
-import { getAllPosts } from "@/lib/api";
+import BasicSection from "@/app/_components/basic-section";
+import { getAllPosts, getRandomGlossaryItem } from "@/lib/api";
 import Hero from "./_components/hero";
 import { Providers } from "./providers";
+import CoinPriceMarquee from "./_components/coin-price-marquee";
 
 export default function Index() {
-  const allPosts = getAllPosts();
 
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
-
+  const glossaryTerm = getRandomGlossaryItem();
+  
   return (
     <Providers>
       <main>
         <Container>
           <Hero />
-          {/* <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          /> */}
-          {morePosts.length > 0 && <MoreStories />}
+          <CoinPriceMarquee />
+          <BasicSection glossaryTerm={glossaryTerm}/>
         </Container>
       </main>
     </Providers>

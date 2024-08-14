@@ -5,14 +5,14 @@ import { Inter } from "next/font/google";
 import cn from "classnames";
 
 import "./globals.css";
-import NavigationBar from "./_components/navbar";
+import NavigationBar from "./_components/navbar/navbar";
 import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: `ICP Academia`,
+  description: `Know everything that you need to know about the ICP blockchain.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -59,7 +59,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body
-        className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
+        style={{ backgroundColor: 'gray.50'}}
       >
         <Providers>
           <NavigationBar />

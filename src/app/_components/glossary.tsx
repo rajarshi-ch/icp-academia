@@ -12,7 +12,7 @@ import {
   SimpleGrid,
   Link as ChakraLink,
 } from "@chakra-ui/react";
-import { GlossaryItem } from "@/interfaces/glossaryItem";
+import { GlossaryItem } from "@/interfaces/glossary";
 import { getAllGlossaryItems } from "@/lib/api";
 import Link from "next/link";
 

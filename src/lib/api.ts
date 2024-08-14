@@ -1,4 +1,4 @@
-import { GlossaryItem } from "@/interfaces/glossaryItem";
+import { GlossaryItem } from "@/interfaces/glossary";
 import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
@@ -49,4 +49,10 @@ export function getAllGlossaryItems(): GlossaryItem[] {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.title > post2.title ? -1 : 1));
   return glossary;
+}
+
+export function getRandomGlossaryItem(): GlossaryItem {
+  const slugs = getGlossarySlugs();
+  const randomIndex = Math.floor(Math.random() * slugs.length);
+  return getGlossaryItemBySlug(slugs[randomIndex]);
 }
