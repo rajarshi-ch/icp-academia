@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { getAllGlossaryItems } from "@/lib/api";
 import Glossary from "../_components/glossary/glossary";
 import { Providers } from "../providers";
@@ -8,7 +8,9 @@ const GlossaryPage: React.FC = () => {
 
   return (
     <Providers>
-      <Glossary glossaryItems={terms} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Glossary glossaryItems={terms} />
+      </Suspense>
     </Providers>
   );
 };

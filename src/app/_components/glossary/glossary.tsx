@@ -5,14 +5,13 @@ import { Box, HStack, Button, Spacer } from "@chakra-ui/react";
 import { GlossaryItem } from "@/interfaces/glossary";
 import GlossaryHero from "./hero";
 import GlossaryListSection from "./list-section";
-import {  useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function Glossary({
   glossaryItems,
 }: {
   glossaryItems: GlossaryItem[];
 }) {
-
   if (!glossaryItems) return;
 
   const [filteredTerms, setFilteredTerms] = useState<GlossaryItem[]>([]);
