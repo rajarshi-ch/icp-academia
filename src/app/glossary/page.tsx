@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAllGlossaryItems } from "@/lib/api";
-import Glossary from "../_components/glossary";
+import Glossary from "../_components/glossary/glossary";
 import { Providers } from "../providers";
 
 const GlossaryPage: React.FC = () => {

@@ -1,19 +1,15 @@
 
 import { InputGroup, InputLeftElement, Input, IconButton } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Dispatch, SetStateAction, FormEvent } from "react";
 
-const SearchBar: React.FC = () => {
-  const router = useRouter();
-  const [query, setQuery] = useState("");
+export interface SearchBarProps {
+  query: string;
+  setQuery: Dispatch<SetStateAction<string>>;
+  handleSearch: (e: FormEvent<HTMLFormElement>) => void;
+}
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (query.trim()) {
-      router.push(`/glossary?search=${query}`);
-    }
-  };
+const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery, handleSearch }) => {
 
   return (
     <form onSubmit={handleSearch}>
@@ -26,6 +22,8 @@ const SearchBar: React.FC = () => {
           placeholder="Search..."
           value={query}
           color={"text.gray"}
+          bg='white'
+          boxShadow='md'
           onChange={(e) => setQuery(e.target.value)}
         />
       </InputGroup>

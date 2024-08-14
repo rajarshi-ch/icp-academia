@@ -13,9 +13,18 @@ import {
 import { useRouter } from "next/navigation";
 import PrimaryButton from "../buttons/primary-button";
 import SearchBar from "../input/search-bar";
+import { useState } from "react";
 
-export default function Hero() {
+export default function HomeHero() {
   const router = useRouter();
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (query.trim()) {
+      router.push(`/glossary?search=${query}`);
+    }
+  };
 
   return (
     <Flex
@@ -53,7 +62,7 @@ export default function Hero() {
           </Text>
           <Stack spacing={4} direction={"row"} marginTop={10}>
             <PrimaryButton url="/glossary">Glossary</PrimaryButton>
-            <SearchBar />
+            <SearchBar {...{query, setQuery, handleSearch}} />
           </Stack>
         </Box>
       </Flex>
