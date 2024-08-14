@@ -42,7 +42,26 @@ const articles: Article[] = [
     date: "2023-06-25",
     readTime: "6 min",
   },
-  // Add more posts as needed
+  {
+    id: 4,
+    title: "Understanding JavaScript Closures",
+    image:
+      "https://images.unsplash.com/photo-1605792657660-596af9009e82?q=80&w=3202&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tags: ["JavaScript", "Programming"],
+    level: "Intermediate",
+    date: "2023-06-20",
+    readTime: "7 min",
+  },
+  {
+    id: 5,
+    title: "Mastering Flexbox in CSS",
+    image:
+      "https://images.unsplash.com/photo-1605792657660-596af9009e82?q=80&w=3202&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tags: ["CSS", "Web Design"],
+    level: "Advanced",
+    date: "2023-06-15",
+    readTime: "9 min",
+  },
 ];
 
 interface BasicSectionProps {

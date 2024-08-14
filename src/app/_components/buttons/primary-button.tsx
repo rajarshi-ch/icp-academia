@@ -6,6 +6,7 @@ interface PrimaryButtonProps extends ButtonProps {
   hoverColor?: string;
   textColor?: string;
   hasHover?: boolean;
+  isExternal?: boolean;
   url?: string;
   onClick?: () => void;
   leadingIcon?: ReactNode;
@@ -17,6 +18,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   hoverColor = useColorModeValue("gray.600", "whiteAlpha.900"),
   textColor = "white",
   hasHover = true,
+  isExternal = false,
   url,
   onClick,
   leadingIcon,
@@ -31,6 +33,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       rounded={"md"}
       size={"md"}
       fontWeight={"medium"}
+      isExternal={isExternal}
       px={6}
       py={6}
       bg={color}

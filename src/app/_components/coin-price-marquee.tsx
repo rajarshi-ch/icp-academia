@@ -25,6 +25,7 @@ const CoinPriceMarquee = () => {
 //   );
     return (
       <div>
+        {/* @ts-ignore */}
         <gecko-coin-price-marquee-widget locale="en" outlined="true" coin-ids="" initial-currency="usd"></gecko-coin-price-marquee-widget>
       </div>
     );

@@ -3,7 +3,7 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { se } from 'date-fns/locale';
 
-const colors = {
+export const colors = {
   text: {
     blueBlack: "#334155",
     gray : "#6B7280",

@@ -5,6 +5,8 @@ import { getAllPosts, getRandomGlossaryItem } from "@/lib/api";
 import Hero from "./_components/hero";
 import { Providers } from "./providers";
 import CoinPriceMarquee from "./_components/coin-price-marquee";
+import LearnICPSection from "./_components/learn-icp-section";
+import IcpCoinsSection from "./_components/icp-coins-section";
 
 export default function Index() {
 
@@ -17,6 +19,8 @@ export default function Index() {
           <Hero />
           <CoinPriceMarquee />
           <BasicSection glossaryTerm={glossaryTerm}/>
+          <LearnICPSection />
+          <IcpCoinsSection />
         </Container>
       </main>
     </Providers>
