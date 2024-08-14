@@ -7,7 +7,7 @@ difficulty: "Beginner"
 tags: ["Web3", "Crypto", "DLT"]
 ---
 
-# Blockchain: The Foundation of Web3
+## Blockchain: The Foundation of Web3
 
 Blockchain technology has emerged as one of the most transformative innovations of the 21st century. At its core, it's a system for recording information in a way that makes it difficult or impossible to change, hack, or cheat the system.
 
