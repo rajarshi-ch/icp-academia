@@ -7,6 +7,7 @@ export const colors = {
   text: {
     blueBlack: "#334155",
     gray : "#6B7280",
+    darkGray : '#111928',
     blueGray : "#505780",
   },
   black: "#0F172A",

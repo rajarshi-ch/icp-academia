@@ -11,10 +11,10 @@ import {
   Grid,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import PrimaryButton from "./buttons/primary-button";
-import SearchBar from "./input/search-bar";
+import PrimaryButton from "../buttons/primary-button";
+import SearchBar from "../input/search-bar";
 import { MdCheckCircle } from "react-icons/md";
-import { colors } from "../theme";
+import { colors } from "../../theme";
 
 export default function LearnICPSection() {
   const router = useRouter();

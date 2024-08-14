@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, Tag, HStack, Text, Flex } from "@chakra-ui/react";
-import { GlossaryItem } from "@/interfaces/glossaryItem";
+import { GlossaryItem } from "@/interfaces/glossary";
 
 interface PostHeaderProps {
   item: GlossaryItem;

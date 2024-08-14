@@ -1,12 +1,12 @@
 import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import BasicSection from "@/app/_components/basic-section";
-import { getAllPosts, getRandomGlossaryItem } from "@/lib/api";
-import Hero from "./_components/hero";
+import BasicSection from "@/app/_components/home/basic-section";
+import { getRandomGlossaryItem } from "@/lib/api";
+import Hero from "./_components/home/hero";
 import { Providers } from "./providers";
-import CoinPriceMarquee from "./_components/coin-price-marquee";
-import LearnICPSection from "./_components/learn-icp-section";
-import IcpCoinsSection from "./_components/icp-coins-section";
+import CoinPriceMarquee from "./_components/home/coin-price-marquee";
+import LearnICPSection from "./_components/home/learn-icp-section";
+import IcpCoinsSection from "./_components/home/icp-coins-section";
+import FaqSection from "./_components/home/faq";
 
 export default function Index() {
 
@@ -21,6 +21,7 @@ export default function Index() {
           <BasicSection glossaryTerm={glossaryTerm}/>
           <LearnICPSection />
           <IcpCoinsSection />
+          <FaqSection />
         </Container>
       </main>
     </Providers>

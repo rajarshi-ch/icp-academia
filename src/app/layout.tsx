@@ -1,14 +1,11 @@
 import Footer from "@/app/_components/footer";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import cn from "classnames";
 
 import "./globals.css";
 import NavigationBar from "./_components/navbar/navbar";
 import { Providers } from "./providers";
-
-const inter = Inter({ subsets: ["latin"] });
+import CentralWrapper from "./_components/central-wrapper";
 
 export const metadata: Metadata = {
   title: `ICP Academia`,
@@ -65,15 +62,7 @@ export default function RootLayout({
           <NavigationBar />
         </Providers>
 
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 16px",
-          }}
-        >
-          {children}
-        </div>
+        <CentralWrapper>{children}</CentralWrapper>
         <Footer />
       </body>
     </html>

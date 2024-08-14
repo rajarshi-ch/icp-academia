@@ -11,8 +11,8 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import PrimaryButton from "./buttons/primary-button";
-import SearchBar from "./input/search-bar";
+import PrimaryButton from "../buttons/primary-button";
+import SearchBar from "../input/search-bar";
 
 export default function Hero() {
   const router = useRouter();
