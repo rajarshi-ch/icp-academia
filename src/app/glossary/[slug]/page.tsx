@@ -42,12 +42,13 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${glossaryItem.title} | icpAcademia`;
+  const title = `${glossaryItem.title} | ICPCoins Academy`;
 
   return {
     title,
     openGraph: {
       title,
+      description: glossaryItem.description,
     },
   };
 }

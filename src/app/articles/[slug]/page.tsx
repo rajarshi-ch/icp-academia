@@ -5,6 +5,7 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/app/_components/post-body";
 import PostHeader from "@/app/_components/post-header";
 import CentralWrapper from "@/app/_components/central-wrapper";
+import { AspectRatio, Image } from "@chakra-ui/react";
 
 export default async function Article({ params }: Params) {
   const article = getArticleBySlug(params.slug);
@@ -18,7 +19,17 @@ export default async function Article({ params }: Params) {
   return (
     <CentralWrapper maxWidth="1000px">
       <main>
-        {/* <Alert preview={glossaryItem.preview} /> */}
+        <AspectRatio ratio={16 / 9} width={"100%"}>
+          <Image
+            src={article.coverImage}
+            alt="Web Technology Image"
+            objectFit="cover"
+            objectPosition="center"
+            width="100%"
+            height="100%"
+            borderRadius="50px" // Added to make the edges rounded
+          />
+        </AspectRatio>
 
         <article style={{ paddingTop: "32px" }}>
           <PostHeader item={article} />
@@ -42,12 +53,21 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${glossaryItem.title} | icpAcademia`;
+  const title = `${glossaryItem.title} | ICPCoins Academy`;
 
   return {
     title,
     openGraph: {
       title,
+      description: glossaryItem.excerpt,
+      images: [
+        {
+          url: glossaryItem.ogImage.url,
+          width: 800,
+          height: 600,
+          alt: title,
+        },
+      ],
     },
   };
 }

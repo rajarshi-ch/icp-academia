@@ -1,38 +1,43 @@
 import React from "react";
 import {
   Box,
-  Heading,
   Image,
   Text,
   Tag,
   HStack,
   VStack,
   Flex,
-  Badge,
   AspectRatio,
 } from "@chakra-ui/react";
-import { CalendarIcon, TimeIcon } from "@chakra-ui/icons";
-import { IArticleCard } from "@/interfaces/article";
-import DifficultyBadge from "../difficulty-badge";
+import { TimeIcon } from "@chakra-ui/icons";
+import { IArticle } from "@/interfaces/article";
+import {DifficultyBadgeV2} from "../difficulty-badge";
 import { formatDate } from "@/lib/utils";
-
+import Link from "next/link"; // Add this import
 // Define types
 
 interface ArticleCardProps {
-  article: IArticleCard;
+  article: IArticle;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
-    <Box borderWidth="1px" borderRadius="2xl" overflow="hidden" boxShadow="sm"
-    _hover={{
+    <Box
+      as={Link}
+      href={`/articles/${article.slug}`}
+      borderWidth="1px"
+      borderRadius="2xl"
+      overflow="hidden"
+      boxShadow="sm"
+      _hover={{
         boxShadow: "md",
         transform: "translateY(-2px)",
-      }}>
+      }}
+    >
       <Box position="relative">
         <AspectRatio ratio={1.8} width="100%">
           <Image
-            src={"/assets/images/bc_2.jpg"}
+            src={article.coverImage}
             alt={article.title}
             borderRadius="2xl"
             objectFit="cover"
@@ -58,7 +63,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
       </Box>
       <VStack align="start" p={4} spacing={2} pb={8}>
         <HStack spacing={4} align="center">
-          <DifficultyBadge level={article.level} />
+          <DifficultyBadgeV2 level={article.difficulty} />
           <Text fontSize="sm" color="text.gray">
             {formatDate(article.date)}
           </Text>

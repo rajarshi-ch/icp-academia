@@ -1,28 +1,18 @@
 import React from "react";
 import { Box, Heading, Tag, HStack, Text, Flex } from "@chakra-ui/react";
-import { GlossaryItem } from "@/interfaces/glossary";
+import { DifficultyBadgeV2 } from "./difficulty-badge";
+import { DifficultyLevel } from "@/interfaces/difficulty";
 
 interface PostHeaderProps {
   item: {
     title: string;
-    difficulty: string;
+    difficulty: DifficultyLevel;
     tags: string[];
   };
 }
 
 const PostHeader: React.FC<PostHeaderProps> = ({ item }) => {
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty.toLowerCase()) {
-      case "beginner":
-        return "green";
-      case "intermediate":
-        return "yellow";
-      case "advanced":
-        return "red";
-      default:
-        return "gray";
-    }
-  };
+
 
   return (
     <Box mb={6}>
@@ -31,27 +21,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({ item }) => {
       </Heading>
 
       <Flex align="center" mb={4}>
-        <Box
-          display="inline-flex"
-          alignItems="center"
-          bg={`${getDifficultyColor(item.difficulty)}.100`}
-          color={`${getDifficultyColor(item.difficulty)}.800`}
-          px={3}
-          py={1}
-          borderRadius="full"
-          fontSize="sm"
-          fontWeight="medium"
-        >
-          <Box
-            as="span"
-            w={2}
-            h={2}
-            borderRadius="full"
-            bg={`${getDifficultyColor(item.difficulty)}.500`}
-            mr={2}
-          />
-          <Text>{item.difficulty}</Text>
-        </Box>
+        <DifficultyBadgeV2 level={item.difficulty} />
       </Flex>
 
       <HStack spacing={2} wrap="wrap">
