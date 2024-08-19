@@ -9,6 +9,7 @@ import {
   Flex,
   Text,
 } from "@chakra-ui/react";
+import { CustomH2 } from "../styled-text";
 
 export default function FaqSection() {
   const faqs: FaqItem[] = [
@@ -41,16 +42,7 @@ export default function FaqSection() {
       alignItems="center"
       mt={14}
     >
-      <Text
-        fontWeight={900}
-        fontSize={"4xl"}
-        lineHeight={"110%"}
-        color={"black"}
-        mb={4}
-        textAlign={"center"}
-      >
-        Frequently Asked Questions
-      </Text>
+      <CustomH2>Frequently Asked Questions</CustomH2>
       <Accordion allowToggle w="100%" maxW="800px" mt={10}>
         {faqs.map((faq, index) => (
           <AccordionItem >

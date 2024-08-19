@@ -7,6 +7,7 @@ import {
   Link as ChakraLink,
   Text,
   Spacer,
+  Stack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -20,8 +21,8 @@ export default function GlossaryListSection({
   if (!glossaryItems || glossaryItems.length == 0) return null;
   return (
     <Box width="100%" borderBottom="0.5px solid lightgray" py={12} >
-      <HStack width='100%' height='100%' position='relative'> 
-        <Flex flex={1} flexDir='column' height='100%'>
+      <Stack direction={{ base : 'column', md : 'row' }} width='100%' height='100%' position='relative'> 
+        <Flex flex={1} flexDir='column' height='100%' minH={'70px'}>
           <Box
               fontSize="5xl" // Adjust size as needed
               fontWeight={900}
@@ -29,7 +30,7 @@ export default function GlossaryListSection({
               textAlign={"left"}
               position='absolute'
               top={0}
-              left={12}
+              left={{base : 4 , md : 12}}
               css={{
                 WebkitTextStroke: "1px #6B7280", // Adjust stroke width and color as needed
                 textStroke: "1px #6B7280" // Fallback for other browsers
@@ -46,7 +47,7 @@ export default function GlossaryListSection({
                   textDecoration="none"
                   _hover={{ bg: 'lightgray'}}
                 >
-                  <Box p={4} width="700px" borderRadius='xl' _hover={{ bg: '#ECF5F990'}}>
+                  <Box p={4} width={{base : '100%' , md : "700px"}} borderRadius='xl' _hover={{ bg: '#ECF5F990'}}>
                     <Text fontWeight="bold" fontSize="xl" mb={2}>
                       {term.title}
                     </Text>
@@ -57,7 +58,7 @@ export default function GlossaryListSection({
             ))}
           </VStack>
         </Flex>
-      </HStack>
+      </Stack>
     </Box>
   );
 }

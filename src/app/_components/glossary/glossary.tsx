@@ -1,7 +1,20 @@
 "use client";
 
 import React, { useState, useEffect, useRef, FC } from "react";
-import { Box, HStack, Button, Spacer } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Button,
+  Spacer,
+  Wrap,
+  WrapItem,
+  useBreakpointValue,
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+} from "@chakra-ui/react";
 import { GlossaryItem } from "@/interfaces/glossary";
 import GlossaryHero from "./hero";
 import GlossaryListSection from "./list-section";
@@ -20,6 +33,7 @@ export default function Glossary({
   );
   const alphabet = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const [query, setQuery] = useState("");
+  const isDesktop = useBreakpointValue({ base: false, md: true });
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -84,29 +98,11 @@ export default function Glossary({
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       /> */}
-      <Box
-        bg="#ECF5F9EF"
-        borderRadius={"full"}
-        position="sticky"
-        top={6}
-        zIndex={20}
-        mt={2}
-        mb={8}
-        py={2}
-      >
-        <HStack spacing={2} overflowX="auto">
-          <Spacer />
-
-          {alphabet.map((letter) => (
-            <AlphabetButton
-              key={letter}
-              letter={letter}
-              setSelectedLetter={(letter) => scrollToLetter(letter)}
-            />
-          ))}
-          <Spacer />
-        </HStack>
-      </Box>
+      <AlphabetButtons
+        alphabet={alphabet}
+        scrollToLetter={scrollToLetter}
+        isDesktop={isDesktop ?? true}
+      />
       {/* <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
         {filteredTerms.map((term) => (
           <Link href={`/glossary/${term.slug}`} key={term.title} passHref>
@@ -143,13 +139,13 @@ export default function Glossary({
 interface AlphabetButtonProps {
   letter: string;
 
-  setSelectedLetter: (letter: string) => void;
+  onClick: (letter: string) => void;
 }
 
 const AlphabetButton: FC<AlphabetButtonProps> = ({
   letter,
 
-  setSelectedLetter,
+  onClick,
 }) => {
   return (
     <Button
@@ -157,9 +153,94 @@ const AlphabetButton: FC<AlphabetButtonProps> = ({
       size="sm"
       variant="solid"
       bg="transparent"
-      onClick={() => setSelectedLetter(letter)}
+      onClick={() => onClick(letter)}
     >
       {letter}
     </Button>
+  );
+};
+
+interface AlphabetButtonsProps {
+  alphabet: string[];
+  scrollToLetter: (letter: string) => void;
+  isDesktop: boolean;
+}
+const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
+  alphabet,
+  scrollToLetter,
+  isDesktop,
+}) => {
+  const buttons = alphabet.map((letter) => (
+    <AlphabetButton
+      key={letter}
+      letter={letter}
+      onClick={(letter) => scrollToLetter(letter)}
+    />
+  ));
+
+  return isDesktop ? (
+    <Box
+      bg="#ECF5F9EF"
+      borderRadius={"full"}
+      position="sticky"
+      top={6}
+      zIndex={20}
+      mt={2}
+      mb={8}
+      py={2}
+    >
+      <HStack
+        gap="auto"
+        overflowX="hidden"
+        justifyContent="space-around"
+        px={8}
+        wrap="wrap"
+      >
+        {buttons}
+      </HStack>
+    </Box>
+  ) : (
+    // <Box
+    //   bg="#ECF5F9EF"
+    //   borderRadius={"lg"}
+    //   position="sticky"
+    //   top={6}
+    //   zIndex={20}
+    //   mt={2}
+    //   mb={2}
+    //   py={2}
+    // >
+    //   <Wrap spacing="6px" justify="center" px={8}>
+    //     {buttons.map((button) => (
+    //       <WrapItem key={button.key}>{button}</WrapItem>
+    //     ))}
+    //   </Wrap>
+    // </Box>
+
+    <Accordion allowToggle
+    bg="#ECF5F9EF"
+    borderRadius={"lg"}
+    position="sticky"
+    top={6}
+    zIndex={20}
+    mt={2}
+    mb={2}
+    py={2}
+    >
+      <AccordionItem
+        
+      >
+        <AccordionPanel pb={4}>
+          <Wrap spacing="6px" justify="center" >
+            {buttons.map((button) => (
+              <WrapItem key={button.key}>{button}</WrapItem>
+            ))}
+          </Wrap>
+        </AccordionPanel>
+        <AccordionButton justifyContent={'center'}>
+          <AccordionIcon />
+        </AccordionButton>
+      </AccordionItem>
+    </Accordion>
   );
 };

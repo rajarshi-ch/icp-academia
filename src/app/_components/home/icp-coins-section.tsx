@@ -13,6 +13,8 @@ import {
 import { useRouter } from "next/navigation";
 import PrimaryButton from "../buttons/primary-button";
 import SearchBar from "../input/search-bar";
+import { CustomH2 } from "../styled-text";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 export default function IcpCoinsSection() {
   const router = useRouter();
@@ -34,24 +36,17 @@ export default function IcpCoinsSection() {
         backgroundSize={"200% 200%"}
         animation={"aurora 10s ease infinite"}
         color={"white"}
+        textAlign={{base : "center" , md : "left" }}
       >
         <Box maxW={"600px"}>
-          <Text
-            fontWeight={900}
-            fontSize={"4xl"}
-            lineHeight={"110%"}
-            color={"black"}
-            mb={3}
-          >
-            All you need to know about ICP, in one place.
-          </Text>
+          <CustomH2>All you need to know about ICP, in one place.</CustomH2>
           <Text fontSize={"lg"} mb={4} color="text.gray">
             <Text as="span" color="primaryBlue" fontWeight={500}>
               icpcoins.com
             </Text>
             {" "}is the leading coin data aggregator on the ICP blockchain. Head on over for the latest data and trends.
           </Text>
-          <PrimaryButton url="https://icpcoins.com/" isExternal={true} >icpcoins.com</PrimaryButton>
+          <PrimaryButton url="https://icpcoins.com/" isExternal={true} trailingIcon={<ArrowForwardIcon />}>icpcoins.com</PrimaryButton>
         </Box>
       </Flex>
 
@@ -61,6 +56,7 @@ export default function IcpCoinsSection() {
         position={"relative"}
         alignItems={"center"}
         p={8}
+        display={{ base: "none", md: "flex" }}
       >
         <AspectRatio ratio={16/9} width={"100%"}>
           <Image

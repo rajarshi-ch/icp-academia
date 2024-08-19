@@ -7,6 +7,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import SearchBar, { SearchBarProps } from "../input/search-bar";
+import { BodyText, CustomH1, CustomH2 } from "../styled-text";
 
 export default function GlossaryHero({ query, setQuery, handleSearch } : SearchBarProps) {
   
@@ -14,11 +15,11 @@ const offset = 10;
   return (
     <Flex
       position={"relative"}
-      height={"36vh"} // Reduced height
+      height={{ base : 'fit-content' , md: "36vh"}} // Reduced height
       width={"100%"}
       bg="#ECF5F9"
       borderRadius="3xl"
-      mt={10}
+      mt={{ base: 2, md: 8 }}
       zIndex={10}
     >
       {/* Left half with aurora-like gradient and text */}
@@ -27,34 +28,27 @@ const offset = 10;
         direction={"column"}
         justifyContent={"center"}
         alignItems={"flex-start"}
-        p={8}
+        px={{ base: 4, md: 8 }} // Responsive padding
+        py={{ base: 8, md: 8 }} // Responsive padding
         backgroundSize={"200% 200%"}
         animation={"aurora 10s ease infinite"}
         color={"white"}
       >
         <Box maxW={"600px"}>
-          <Text
-            fontWeight={900}
-            fontSize={"6xl"}
-            lineHeight={"110%"}
-            color={"black"}
-            mb={3}
-          >
-            Glossary
-          </Text>
-          <Text fontSize={"lg"} mb={10} color="text.gray">
+          <CustomH1>Glossary</CustomH1>
+          <BodyText>
             <Text as="span" color="primaryBlue" fontWeight={500}>
               ICPCoins Academy
             </Text>{" "}
             is the leading site for all things iCP. Read a new term that you
             want more context on? Just look it up here.
-          </Text>
+          </BodyText>
           <SearchBar {...{query, setQuery, handleSearch}}/>
         </Box>
       </Flex>
 
       {/* Right half with GIF background */}
-      <Flex flex={1} position={"relative"} alignItems={"center"}>
+      <Flex flex={1} position={"relative"} alignItems={"center"} display={{base : 'none' , md : 'flex'}}>
         <Box
           as="span"
           fontSize="200px" // Adjust size as needed

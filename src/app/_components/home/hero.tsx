@@ -14,6 +14,8 @@ import { useRouter } from "next/navigation";
 import PrimaryButton from "../buttons/primary-button";
 import SearchBar from "../input/search-bar";
 import { useState } from "react";
+import { CustomH1 } from "../styled-text";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 export default function HomeHero() {
   const router = useRouter();
@@ -28,7 +30,7 @@ export default function HomeHero() {
 
   return (
     <Flex
-      position={"relative"}
+      // position={"relative"}
       height={"56vh"} // Reduced height
       width={"100%"}
       overflow={"hidden"}
@@ -39,29 +41,21 @@ export default function HomeHero() {
         direction={"column"}
         justifyContent={"center"}
         alignItems={"flex-start"}
-        p={8}
+        py={8}
         backgroundSize={"200% 200%"}
         animation={"aurora 10s ease infinite"}
         color={"white"}
       >
         <Box maxW={"600px"}>
-          <Text
-            fontWeight={900}
-            fontSize={"6xl"}
-            lineHeight={"110%"}
-            color={"black"}
-            mb={3}
-          >
-            All you need to know about ICP, in one place.
-          </Text>
+          <CustomH1> All you need to know about ICP, in one place.</CustomH1>
           <Text fontSize={"lg"} mb={4} color="text.gray">
             <Text as="span" color="primaryBlue" fontWeight={500}>
               ICPCoins Academy
             </Text>
             {" "}is the leading site for all things iCP. Read a new term that you want more context on? Just look it up here.
           </Text>
-          <Stack spacing={4} direction={"row"} marginTop={10}>
-            <PrimaryButton url="/glossary">Glossary</PrimaryButton>
+          <Stack spacing={4} direction={{ base : "column" , md : "row" }} marginTop={10}>
+            <PrimaryButton url="/glossary" trailingIcon={<ArrowForwardIcon />}>Glossary</PrimaryButton>
             <SearchBar {...{query, setQuery, handleSearch}} />
           </Stack>
         </Box>
@@ -72,6 +66,7 @@ export default function HomeHero() {
         flex={1}
         position={"relative"}
         alignItems={"center"}
+        display={{ base: "none", md: "flex" }}
       >
         <AspectRatio ratio={1} width={"100%"}>
           <Image

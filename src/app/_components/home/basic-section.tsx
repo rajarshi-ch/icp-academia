@@ -9,6 +9,7 @@ import { Article } from "@/interfaces/article";
 import ArticleCard from "../cards/article-card";
 import GlossaryCard from "../cards/glossary-card";
 import { GlossaryItem } from "@/interfaces/glossary";
+import { CustomH2 } from "../styled-text";
 
 // Mock data for posts
 const articles: Article[] = [
@@ -72,17 +73,8 @@ const BasicSection: React.FC<BasicSectionProps> = ({ glossaryTerm }) => {
 
 
   return (
-    <Box py={12}>
-      <Text
-        fontWeight={900}
-        fontSize={"4xl"}
-        lineHeight={"110%"}
-        color={"black"}
-        mb={4}
-        textAlign={"center"}
-      >
-        Basics
-      </Text>
+    <Box py={{ base : 0 , md : 8 }}>
+      <CustomH2 textAlign="center">Basics</CustomH2>
       <Text fontSize={"lg"} mb={10} color="text.gray" textAlign={"center"}>
         All the basics to get you started on the ICP terminology and concepts.
       </Text>
