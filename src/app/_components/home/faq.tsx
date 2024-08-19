@@ -47,7 +47,7 @@ export default function FaqSection() {
       <CustomH2>Frequently Asked Questions</CustomH2>
       <Accordion allowToggle w="100%" maxW="800px" mt={10}>
         {faqs.map((faq, index) => (
-          <AccordionItem>
+          <AccordionItem key={index}>
             <AccordionButton py={4}>
               <Text
                 flex="1"
