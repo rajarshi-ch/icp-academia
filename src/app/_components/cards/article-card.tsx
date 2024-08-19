@@ -12,14 +12,14 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { CalendarIcon, TimeIcon } from "@chakra-ui/icons";
-import { Article } from "@/interfaces/article";
+import { IArticleCard } from "@/interfaces/article";
 import DifficultyBadge from "../difficulty-badge";
 import { formatDate } from "@/lib/utils";
 
 // Define types
 
 interface ArticleCardProps {
-  article: Article;
+  article: IArticleCard;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {

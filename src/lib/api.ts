@@ -1,32 +1,32 @@
+import { IArticle } from "@/interfaces/article";
 import { GlossaryItem } from "@/interfaces/glossary";
-import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-const postsDirectory = join(process.cwd(), "_posts");
+const articlesDirectory = join(process.cwd(), "_articles");
 const glossaryDirectory = join(process.cwd(), "_glossary");
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+export function getArticleSlugs() {
+  return fs.readdirSync(articlesDirectory);
 }
 
-export function getPostBySlug(slug: string) {
+export function getArticleBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(articlesDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  return { ...data, slug: realSlug, content } as Post;
+  return { ...data, slug: realSlug, content } as IArticle;
 }
 
-export function getAllPosts(): Post[] {
-  const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
+export function getAllArticles(): IArticle[] {
+  const slugs = getArticleSlugs();
+  const articles = slugs
+    .map((slug) => getArticleBySlug(slug))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+  return articles;
 }
 
 export function getGlossarySlugs() {

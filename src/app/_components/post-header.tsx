@@ -3,7 +3,11 @@ import { Box, Heading, Tag, HStack, Text, Flex } from "@chakra-ui/react";
 import { GlossaryItem } from "@/interfaces/glossary";
 
 interface PostHeaderProps {
-  item: GlossaryItem;
+  item: {
+    title: string;
+    difficulty: string;
+    tags: string[];
+  };
 }
 
 const PostHeader: React.FC<PostHeaderProps> = ({ item }) => {

@@ -5,14 +5,14 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { Article } from "@/interfaces/article";
+import { IArticleCard } from "@/interfaces/article";
 import ArticleCard from "../cards/article-card";
 import GlossaryCard from "../cards/glossary-card";
 import { GlossaryItem } from "@/interfaces/glossary";
 import { CustomH2 } from "../styled-text";
 
 // Mock data for posts
-const articles: Article[] = [
+const articles: IArticleCard[] = [
   {
     id: 1,
     title: "Introduction to React Hooks",
