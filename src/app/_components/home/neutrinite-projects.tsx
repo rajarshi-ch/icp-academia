@@ -1,6 +1,14 @@
 "use client";
 import React from "react";
-import { Box, SimpleGrid, Text, Icon, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  SimpleGrid,
+  Text,
+  Icon,
+  HStack,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { FiExternalLink } from "react-icons/fi";
 
 import { CustomH2 } from "../styled-text";
@@ -49,6 +57,10 @@ export default function OtherNeutriiteProjects() {
 }
 
 function ProjectCard({ project }: { project: NeutriniteProject }) {
+  const lightGradient = "linear-gradient(135deg, #a1c4fd50 0%, #c2e9fb40 50%)";
+  const darkGradient = "linear-gradient(135deg, #667eea10 0%, #764ba280 50%)"; // Darker and more opaque
+  const gradient = useColorModeValue(lightGradient, darkGradient);
+
   return (
     <Box
       as="a"
@@ -61,12 +73,11 @@ function ProjectCard({ project }: { project: NeutriniteProject }) {
       //borderColor="black"
       borderRadius="lg"
       overflow="hidden"
-      bg="linear-gradient(135deg, #a1c4fd50 0%, #c2e9fb40 50%)"
+      bg={gradient}
       transition="all 0.2s"
       _hover={{
         transform: "translateY(-2px)",
         boxShadow: "sm",
-        bg: "linear-gradient(135deg, #a1c4fd50 0%, #c2e9fb40 70%)",
       }}
     >
       <HStack justifyContent="space-between">
@@ -78,11 +89,18 @@ function ProjectCard({ project }: { project: NeutriniteProject }) {
           >
             {project.title}
           </Text>
-          <Text fontSize={{ base: "sm", md: "md" }} color="gray.500">
+          <Text
+            fontSize={{ base: "sm", md: "md" }}
+            color={useColorModeValue("gray.500", "gray.300")}
+          >
             {project.url}
           </Text>
         </Box>
-        <Icon as={FiExternalLink} color="gray.900" />
+        <Icon
+          as={FiExternalLink}
+          color={useColorModeValue("gray.900", "gray.00")}
+          boxSize={5}
+        />
       </HStack>
     </Box>
   );

@@ -2,6 +2,7 @@
 
 import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { se } from 'date-fns/locale';
+import { text } from 'stream/consumers';
 
 export const colors = {
   text: {
@@ -9,6 +10,12 @@ export const colors = {
     gray : "#6B7280",
     darkGray : '#111928',
     blueGray : "#505780",
+  },
+  darkMode : {
+    textWhite : '#e6e8ea',
+    textGray : '#aeb4bc',
+    backgroundGray : '#2D3748DF',
+    tertiaryBlue: "#E1E8FF10",
   },
   black: "#0F172A",
   lightGray: "#E4ECF7",

@@ -9,11 +9,12 @@ import {
   Stack,
   Image,
   AspectRatio,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import PrimaryButton from "../buttons/primary-button";
 import SearchBar from "../input/search-bar";
-import { CustomH2 } from "../styled-text";
+import { BodyText, CustomH2 } from "../styled-text";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 export default function IcpCoinsSection() {
@@ -23,7 +24,7 @@ export default function IcpCoinsSection() {
     <Flex
       position={"relative"}
       width={"100%"}
-      bg='tertiaryBlue'
+      bg={useColorModeValue('tertiaryBlue', 'darkMode.tertiaryBlue')}
       borderRadius='3xl'
     >
       {/* Left half with aurora-like gradient and text */}
@@ -40,12 +41,12 @@ export default function IcpCoinsSection() {
       >
         <Box maxW={"600px"}>
           <CustomH2>All you need to know about ICP, in one place.</CustomH2>
-          <Text fontSize={"lg"} mb={4} color="text.gray">
+          <BodyText mb={4}>
             <Text as="span" color="primaryBlue" fontWeight={500}>
               icpcoins.com
             </Text>
             {" "}is the leading coin data aggregator on the ICP blockchain. Head on over for the latest data and trends.
-          </Text>
+          </BodyText>
           <PrimaryButton url="https://icpcoins.com/" isExternal={true} trailingIcon={<ArrowForwardIcon />}>icpcoins.com</PrimaryButton>
         </Box>
       </Flex>

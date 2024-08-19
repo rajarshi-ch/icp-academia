@@ -14,6 +14,7 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { GlossaryItem } from "@/interfaces/glossary";
 import GlossaryHero from "./hero";
@@ -177,10 +178,10 @@ const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
       onClick={(letter) => scrollToLetter(letter)}
     />
   ));
-
+  const bgColor = useColorModeValue("#ECF5F9EF", "darkMode.backgroundGray");
   return isDesktop ? (
     <Box
-      bg="#ECF5F9EF"
+      bg={bgColor}
       borderRadius={"full"}
       position="sticky"
       top={6}
@@ -219,7 +220,7 @@ const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
 
     <Accordion
       allowToggle
-      bg="#ECF5F9EF"
+      bg={bgColor}
       borderRadius={"lg"}
       position="sticky"
       top={6}
@@ -228,7 +229,7 @@ const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
       mb={2}
       py={2}
     >
-      <AccordionItem>
+      <AccordionItem border='none'>
         <AccordionPanel pb={4}>
           <Wrap spacing="6px" justify="center">
             {buttons.map((button) => (
@@ -236,7 +237,7 @@ const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
             ))}
           </Wrap>
         </AccordionPanel>
-        <AccordionButton justifyContent={"center"}>
+        <AccordionButton justifyContent={"center"} >
           <AccordionIcon />
         </AccordionButton>
       </AccordionItem>

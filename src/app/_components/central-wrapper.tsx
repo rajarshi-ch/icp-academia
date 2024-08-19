@@ -1,7 +1,6 @@
 'use client';
 import React, { ReactNode } from 'react';
 import { Box } from '@chakra-ui/react';
-import { Providers } from '../providers';
 
 interface CentralWrapperProps {
   children: ReactNode;
@@ -10,7 +9,7 @@ interface CentralWrapperProps {
 
 const CentralWrapper: React.FC<CentralWrapperProps> = ({ children, maxWidth }) => {
   return (
-    <Providers>
+
     <Box
       maxWidth={maxWidth ?? "1200px"}
       margin="0 auto"
@@ -18,7 +17,6 @@ const CentralWrapper: React.FC<CentralWrapperProps> = ({ children, maxWidth }) =
     >
       {children}
     </Box>
-    </Providers>
   );
 };
 

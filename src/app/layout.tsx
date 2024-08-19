@@ -55,15 +55,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body
-        style={{ backgroundColor: 'gray.50'}}
-      >
+      <body style={{ backgroundColor: "gray.50" }}>
         <Providers>
           <NavigationBar />
+          <CentralWrapper>{children}</CentralWrapper>
+          <Footer />
         </Providers>
-
-        <CentralWrapper>{children}</CentralWrapper>
-        <Footer />
       </body>
     </html>
   );

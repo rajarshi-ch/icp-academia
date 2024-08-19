@@ -1,3 +1,4 @@
+"use client";
 import { FaqItem } from "@/interfaces/faq";
 import {
   Accordion,
@@ -8,8 +9,9 @@ import {
   AccordionPanel,
   Flex,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { CustomH2 } from "../styled-text";
+import { BodyText, CustomH2 } from "../styled-text";
 
 export default function FaqSection() {
   const faqs: FaqItem[] = [
@@ -45,20 +47,20 @@ export default function FaqSection() {
       <CustomH2>Frequently Asked Questions</CustomH2>
       <Accordion allowToggle w="100%" maxW="800px" mt={10}>
         {faqs.map((faq, index) => (
-          <AccordionItem >
+          <AccordionItem>
             <AccordionButton py={4}>
               <Text
                 flex="1"
                 textAlign="left"
-                color="text.darkGray"
+                color={useColorModeValue("text.darkGray", "darkMode.textWhite")}
                 fontWeight={500}
               >
                 {faq.question}
               </Text>
               <AccordionIcon />
             </AccordionButton>
-            <AccordionPanel pb={4} color="text.gray">
-              {faq.answer}
+            <AccordionPanel pb={4}>
+              <BodyText textAlign="left" >{faq.answer}</BodyText>
             </AccordionPanel>
           </AccordionItem>
         ))}

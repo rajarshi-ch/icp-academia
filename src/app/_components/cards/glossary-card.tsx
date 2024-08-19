@@ -16,6 +16,7 @@ import DifficultyBadge from "../difficulty-badge";
 import { formatDate } from "@/lib/utils";
 import { GlossaryItem } from "@/interfaces/glossary";
 import LearnMoreButton from "../buttons/learn-more-button";
+import { BodyText } from "../styled-text";
 
 // Define types
 
@@ -43,9 +44,7 @@ const GlossaryCard: React.FC<GlossaryCardProps> = ({ glossaryTerm }) => {
           {glossaryTerm.title}
         </Text>
         <Box w="20%" h="3px" bg="secondaryBlue" borderRadius='full' />
-        <Text fontSize="sm" color="text.gray" mb={4}>
-          {glossaryTerm.description}
-        </Text>
+        <BodyText fontSize="sm">{glossaryTerm.description}</BodyText>
         <LearnMoreButton url={`/glossary/${glossaryTerm.slug}`} />
       </VStack>
     </Box>

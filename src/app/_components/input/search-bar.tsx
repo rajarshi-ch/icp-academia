@@ -1,5 +1,5 @@
 
-import { InputGroup, InputLeftElement, Input, IconButton } from "@chakra-ui/react";
+import { InputGroup, InputLeftElement, Input, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { Dispatch, SetStateAction, FormEvent } from "react";
 
@@ -22,7 +22,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery, handleSearch }) 
           placeholder="Search..."
           value={query}
           color={"text.gray"}
-          bg='white'
+          bg={useColorModeValue("white", "transparent")}
           boxShadow='md'
           onChange={(e) => setQuery(e.target.value)}
         />

@@ -5,6 +5,7 @@ import {
   Flex,
   Text,
   Image,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import SearchBar, { SearchBarProps } from "../input/search-bar";
 import { BodyText, CustomH1, CustomH2 } from "../styled-text";
@@ -17,7 +18,7 @@ const offset = 10;
       position={"relative"}
       height={{ base : 'fit-content' , md: "36vh"}} // Reduced height
       width={"100%"}
-      bg="#ECF5F9"
+      bg={useColorModeValue("#ECF5F9", "transparent")}
       borderRadius="3xl"
       mt={{ base: 2, md: 8 }}
       zIndex={10}

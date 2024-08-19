@@ -9,7 +9,7 @@ import { IArticleCard } from "@/interfaces/article";
 import ArticleCard from "../cards/article-card";
 import GlossaryCard from "../cards/glossary-card";
 import { GlossaryItem } from "@/interfaces/glossary";
-import { CustomH2 } from "../styled-text";
+import { BodyText, CustomH2 } from "../styled-text";
 
 // Mock data for posts
 const articles: IArticleCard[] = [
@@ -75,9 +75,9 @@ const BasicSection: React.FC<BasicSectionProps> = ({ glossaryTerm }) => {
   return (
     <Box py={{ base : 0 , md : 8 }}>
       <CustomH2 textAlign="center">Basics</CustomH2>
-      <Text fontSize={"lg"} mb={10} color="text.gray" textAlign={"center"}>
+      <BodyText mb={10}textAlign={"center"}>
         All the basics to get you started on the ICP terminology and concepts.
-      </Text>
+      </BodyText>
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
         {articles.map((article) => (
           <ArticleCard key={article.id} article={article} />

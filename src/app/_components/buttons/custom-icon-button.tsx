@@ -5,6 +5,7 @@ type CustomIconButtonProps = ButtonProps & {
   url?: string;
   iconSize?: number | string;
   iconColor?: string;
+  isExternal?: boolean;
 };
 
 /**
@@ -41,13 +42,16 @@ export default function CustomIconButton(props: CustomIconButtonProps) {
     iconSize = 10, // Default icon size
     iconColor = "gray.400",
     onClick,
+    isExternal = false,
     ...rest
   } = props;
   return (
     <IconButton
       as={onClick ? "button" : Link}
       href={onClick ? undefined : url}
-      // isExternal={!onClick}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      
       isRound={true}
       aria-label={props["aria-label"] || "icon-button"}
       icon={<BtnIcon color={iconColor} />}

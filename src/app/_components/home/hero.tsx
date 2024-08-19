@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import PrimaryButton from "../buttons/primary-button";
 import SearchBar from "../input/search-bar";
 import { useState } from "react";
-import { CustomH1 } from "../styled-text";
+import { BodyText, CustomH1 } from "../styled-text";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 export default function HomeHero() {
@@ -48,12 +48,12 @@ export default function HomeHero() {
       >
         <Box maxW={"600px"}>
           <CustomH1> All you need to know about ICP, in one place.</CustomH1>
-          <Text fontSize={"lg"} mb={4} color="text.gray">
+          <BodyText>
             <Text as="span" color="primaryBlue" fontWeight={500}>
               ICPCoins Academy
             </Text>
             {" "}is the leading site for all things iCP. Read a new term that you want more context on? Just look it up here.
-          </Text>
+          </BodyText>
           <Stack spacing={4} direction={{ base : "column" , md : "row" }} marginTop={10}>
             <PrimaryButton url="/glossary" trailingIcon={<ArrowForwardIcon />}>Glossary</PrimaryButton>
             <SearchBar {...{query, setQuery, handleSearch}} />

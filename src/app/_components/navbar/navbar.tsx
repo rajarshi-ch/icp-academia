@@ -5,7 +5,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -13,9 +12,7 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
-  Image,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -23,8 +20,8 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import ColorModeToggle from "./theme-switcher";
 import ComponentLinks from "./component-links";
+import { AcademyLogo } from "../academy-logo";
 
 export default function NavigationBar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -62,20 +59,7 @@ export default function NavigationBar() {
           justify={{ base: "center", md: "start" }}
           alignItems="center"
         >
-          <Box as="a" href="/" display="flex" alignItems="center">
-            <Image
-              src="/assets/logo/icpAcademia icon 2.svg"
-              alt="ICPCoins Academy Logo"
-              boxSize="28px" // Adjust the size as needed
-              mr={2} // Add some margin to the right of the logo
-            />
-            <Text
-              textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              fontWeight={600}
-            >
-              ICPCoins Academy
-            </Text>
-          </Box>
+          <AcademyLogo />
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -289,12 +273,12 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Glossary",
     href: "/glossary",
   },
-  {
-    label: "Articles",
-    href: "/articles",
-  },
-  {
-    label: "Showcase",
-    href: "/showcase",
-  },
+  // {
+  //   label: "Articles",
+  //   href: "/articles",
+  // },
+  // {
+  //   label: "Showcase",
+  //   href: "/showcase",
+  // },
 ];

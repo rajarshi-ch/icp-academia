@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Link, useColorModeValue } from "@chakra-ui/react";
+import { Button, ButtonProps, Link } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface PrimaryButtonProps extends ButtonProps {
@@ -15,7 +15,7 @@ interface PrimaryButtonProps extends ButtonProps {
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   color = "black",
-  hoverColor = useColorModeValue("gray.600", "whiteAlpha.900"),
+  hoverColor = "gray.600",
   textColor = "white",
   hasHover = true,
   isExternal = false,
