@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { TimeIcon } from "@chakra-ui/icons";
 import { IArticle } from "@/interfaces/article";
-import {DifficultyBadgeV2} from "../difficulty-badge";
+import { DifficultyBadgeV2 } from "../difficulty-badge";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link"; // Add this import
 // Define types

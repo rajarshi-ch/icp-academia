@@ -1,10 +1,6 @@
-'use client';
+"use client";
 import React from "react";
-import {
-  Box,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { IArticle, IArticleCard } from "@/interfaces/article";
 import ArticleCard from "../cards/article-card";
 import GlossaryCard from "../cards/glossary-card";
@@ -70,13 +66,14 @@ interface BasicSectionProps {
   articles: IArticle[];
 }
 
-const BasicSection: React.FC<BasicSectionProps> = ({ glossaryTerm , articles}) => {
-
-
+const BasicSection: React.FC<BasicSectionProps> = ({
+  glossaryTerm,
+  articles,
+}) => {
   return (
-    <Box py={{ base : 0 , md : 8 }}>
+    <Box py={{ base: 0, md: 8 }}>
       <CustomH2 textAlign="center">Basics</CustomH2>
-      <BodyText mb={10}textAlign={"center"}>
+      <BodyText mb={10} textAlign={"center"}>
         All the basics to get you started on the ICP terminology and concepts.
       </BodyText>
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>

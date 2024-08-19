@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Box , Text , useColorModeValue } from "@chakra-ui/react";
+import { Badge, Box, Text } from "@chakra-ui/react";
 import { DifficultyLevel } from "@/interfaces/difficulty";
 
 interface DifficultyBadgeProps {
@@ -28,7 +28,6 @@ export const DifficultyBadgeV1: React.FC<DifficultyBadgeProps> = ({
     </Badge>
   );
 };
-
 
 const getDifficultyColor = (difficulty: DifficultyLevel) => {
   switch (difficulty) {
@@ -66,7 +65,7 @@ export const DifficultyBadgeV2: React.FC<DifficultyBadgeProps> = ({
         bg={`${getDifficultyColor(level)}.500`}
         mr={2}
       />
-      <Text color='text.blueBlack'>{level}</Text>
+      <Text color="text.blueBlack">{level}</Text>
     </Box>
   );
 };

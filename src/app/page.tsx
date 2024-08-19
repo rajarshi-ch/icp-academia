@@ -15,7 +15,7 @@ export default function Index() {
       <Hero />
       {/* <CoinPriceMarquee /> */}
       <OtherNeutriiteProjects />
-      <BasicSection glossaryTerm={glossaryTerm} articles={articles}/>
+      <BasicSection glossaryTerm={glossaryTerm} articles={articles} />
       <LearnICPSection />
       <IcpCoinsSection />
       <FaqSection />

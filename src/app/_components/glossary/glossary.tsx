@@ -229,7 +229,7 @@ const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
       mb={2}
       py={2}
     >
-      <AccordionItem border='none'>
+      <AccordionItem border="none">
         <AccordionPanel pb={4}>
           <Wrap spacing="6px" justify="center">
             {buttons.map((button) => (
@@ -237,7 +237,7 @@ const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
             ))}
           </Wrap>
         </AccordionPanel>
-        <AccordionButton justifyContent={"center"} >
+        <AccordionButton justifyContent={"center"}>
           <AccordionIcon />
         </AccordionButton>
       </AccordionItem>

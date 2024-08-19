@@ -12,8 +12,6 @@ interface PostHeaderProps {
 }
 
 const PostHeader: React.FC<PostHeaderProps> = ({ item }) => {
-
-
   return (
     <Box mb={6}>
       <Heading as="h1" size="xl" mb={4}>
