@@ -12,7 +12,7 @@ tags: ["Web3", "x", "x", "x"]
 
  NFT Analytics involves the study and interpretation of data related to Non-Fungible Tokens (NFTs) to assess their value, rarity, trading volume, and market trends.
 
-As the NFT market exploded in popularity, particularly in 2020 and 2021, the need for specialized analytics tools emerged to navigate this new and rapidly growing segment of the digital asset market.
+As the [NFT](/glossary/nft) market exploded in popularity, particularly in 2020 and 2021, the need for specialized analytics tools emerged to navigate this new and rapidly growing segment of the digital asset market.
 
 NFT analytics platforms gather and process data from various blockchain networks, providing insights into sales history, floor prices, rarity rankings, and liquidity of NFTs. These insights help collectors, investors, and creators make better decisions about buying, selling, or creating NFTs.
 

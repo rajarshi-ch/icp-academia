@@ -27,3 +27,8 @@
   margin-bottom: 1rem; /* equivalent to mb-4 */
   line-height: 1.375; /* equivalent to leading-snug */
 }
+
+.markdown a {
+  color: blue;
+  text-decoration: underline; /* Optional: to underline the links */
+}

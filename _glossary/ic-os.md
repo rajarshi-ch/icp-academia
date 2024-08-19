@@ -18,12 +18,7 @@ IC-OS (Internet Computer Operating System) is a suite of operating systems, base
 
 The development of IC-OS is a significant milestone in the evolution of decentralized computing. Initiated by the DFINITY Foundation, IC-OS represents a concerted effort to decentralize and automate the management of network nodes, enhancing the security, efficiency, and scalability of the Internet Computer. You can think of it as Android/Linux OS for ICP Blockchain to create a decentralized computing platform that anyone can use.
 
-<<<<<<< HEAD
-#### How IC-OS Works
-
-=======
 #### How IC-OS Works:
->>>>>>> 3e8ea8a8d5ab9103caa32fbec40fd3862a7547e2
 IC-OS is meticulously designed to ensure seamless operation and maintenance of nodes within the Internet Computer network. Here's a breakdown of its components:
 
 - **SetupOS:** Responsible for booting new replica nodes and installing HostOS and GuestOS.

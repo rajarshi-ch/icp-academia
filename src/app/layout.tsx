@@ -8,7 +8,7 @@ import { Providers } from "./providers";
 import CentralWrapper from "./_components/central-wrapper";
 
 export const metadata: Metadata = {
-  title: `ICP Academia`,
+  title: `ICPCoins Academy`,
   description: `Know everything that you need to know about the ICP blockchain.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
