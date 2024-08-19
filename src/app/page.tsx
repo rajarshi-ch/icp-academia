@@ -5,6 +5,7 @@ import CoinPriceMarquee from "./_components/home/coin-price-marquee";
 import LearnICPSection from "./_components/home/learn-icp-section";
 import IcpCoinsSection from "./_components/home/icp-coins-section";
 import FaqSection from "./_components/home/faq";
+import OtherNeutriiteProjects from "./_components/home/neutrinite-projects";
 
 export default function Index() {
   const glossaryTerm = getRandomGlossaryItem();
@@ -13,6 +14,7 @@ export default function Index() {
     <main>
       <Hero />
       {/* <CoinPriceMarquee /> */}
+      <OtherNeutriiteProjects />
       <BasicSection glossaryTerm={glossaryTerm} />
       <LearnICPSection />
       <IcpCoinsSection />

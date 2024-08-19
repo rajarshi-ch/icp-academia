@@ -217,27 +217,26 @@ const AlphabetButtons: React.FC<AlphabetButtonsProps> = ({
     //   </Wrap>
     // </Box>
 
-    <Accordion allowToggle
-    bg="#ECF5F9EF"
-    borderRadius={"lg"}
-    position="sticky"
-    top={6}
-    zIndex={20}
-    mt={2}
-    mb={2}
-    py={2}
+    <Accordion
+      allowToggle
+      bg="#ECF5F9EF"
+      borderRadius={"lg"}
+      position="sticky"
+      top={6}
+      zIndex={20}
+      mt={2}
+      mb={2}
+      py={2}
     >
-      <AccordionItem
-        
-      >
+      <AccordionItem>
         <AccordionPanel pb={4}>
-          <Wrap spacing="6px" justify="center" >
+          <Wrap spacing="6px" justify="center">
             {buttons.map((button) => (
               <WrapItem key={button.key}>{button}</WrapItem>
             ))}
           </Wrap>
         </AccordionPanel>
-        <AccordionButton justifyContent={'center'}>
+        <AccordionButton justifyContent={"center"}>
           <AccordionIcon />
         </AccordionButton>
       </AccordionItem>
