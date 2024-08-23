@@ -16,24 +16,25 @@ import { BodyText, CustomH2 } from "../styled-text";
 export default function FaqSection() {
   const faqs: FaqItem[] = [
     {
-      question: "Who maintains the ICP blockchain?",
+      question: "What is ICP blockchain and Who maintains it?",
       answer:
-        "The Internet Computer Protocol (ICP) is maintained by the DFINITY Foundation, a non-profit organization based in Zurich, Switzerland, along with a global community of independent data centers.",
+        "ICP is the wordls fastest and most powerful general purpose blockchain, whose purpose is to enable the vision of a decentralized world computer for running software as smart contracts, fully on the blockchain. ICP does not have a single governing body, it is governed by On chain Algorithmic DAO called Network Nervous System. ICP was created and designed by a non profit crypto research organization called DFINITY. DFINITY is the major leading contributer to Internet Computer blockchain and has designed several novel crypto protocols to realize the vision of scalable limitless public blockchain computer.",
     },
     {
-      question: "How is ICPCoins Academy related to icpcoins.com?",
+      question:
+        "What is ICP Coins Academy and how is it related to ICPCoins.com",
       answer:
-        "ICPCoins Academy is an educational initiative by icpcoins.com aimed at providing comprehensive learning resources about the Internet Computer Protocol and its ecosystem.",
+        "ICPCoins Academy is an educational initiative by Neutrinite DAO, which also built and governs ICPCoins.com. Academy is aimed at providing comprehensive learning resources about the Internet Computer Protocol and its ecosystem.",
     },
     {
       question: "What is Neutrinite DAO?",
-      answer:
-        "Neutrinite DAO is a decentralized autonomous organization focused on fostering innovation and development within the Internet Computer ecosystem.",
+      answer: `Neutrinite DAO is a decentralized autonomous organization focused on building innovative smart contract applications on Internet Computer Ecosystem. Neutrinite DAO was founded by NTN Developer team and was tokenized on ICP.
+        Neutrinite DAO is governed via voting with Service Nervous System DAO framerwork on ICP using $NTN token. NTN token holders can vote on DAO proposals to upgrade and govern decentralized applications built by NTN DAO. Decentralization Sale or Auction was done using SNS Interface to distribute the tokens to Community Members.`,
     },
     {
-      question: "Who vets the content in ICPCoins Academy?",
+      question: "Who vets and creates the content on ICPCoins Academy website?",
       answer:
-        "The content in ICPCoins Academy is vetted by a team of experts and contributors from the ICP community to ensure accuracy and relevance.",
+        "The content in ICPCoins Academy is contributed currently by the Neutrinite DAO development team, who have been building on the Internet Computer blockchain since its mainnet launch. ICPCoins Academy is hosted fully on chain and the updates will go through $NTN DAO voting via SNS proposals.",
     },
   ];
   return (
@@ -60,7 +61,7 @@ export default function FaqSection() {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              <BodyText textAlign="left" >{faq.answer}</BodyText>
+              <BodyText textAlign="left">{faq.answer}</BodyText>
             </AccordionPanel>
           </AccordionItem>
         ))}

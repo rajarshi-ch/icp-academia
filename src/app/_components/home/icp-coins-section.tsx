@@ -24,8 +24,8 @@ export default function IcpCoinsSection() {
     <Flex
       position={"relative"}
       width={"100%"}
-      bg={useColorModeValue('tertiaryBlue', 'darkMode.tertiaryBlue')}
-      borderRadius='3xl'
+      bg={useColorModeValue("tertiaryBlue", "darkMode.tertiaryBlue")}
+      borderRadius="3xl"
     >
       {/* Left half with aurora-like gradient and text */}
       <Flex
@@ -37,17 +37,25 @@ export default function IcpCoinsSection() {
         backgroundSize={"200% 200%"}
         animation={"aurora 10s ease infinite"}
         color={"white"}
-        textAlign={{base : "center" , md : "left" }}
+        textAlign={{ base: "center", md: "left" }}
       >
         <Box maxW={"600px"}>
-          <CustomH2>All you need to know about ICP, in one place.</CustomH2>
+          <CustomH2>ICP DeFi analytics updated in real time</CustomH2>
           <BodyText mb={4}>
             <Text as="span" color="primaryBlue" fontWeight={500}>
-              icpcoins.com
-            </Text>
-            {" "}is the leading coin data aggregator on the ICP blockchain. Head on over for the latest data and trends.
+              ICPCoins
+            </Text>{" "}
+            is a fully on chain price aggregator for ICP DeFi ecosystem. Data is
+            aggregated, curated and presented fully on chain with Canister Smart
+            Contracts.
           </BodyText>
-          <PrimaryButton url="https://icpcoins.com/" isExternal={true} trailingIcon={<ArrowForwardIcon />}>icpcoins.com</PrimaryButton>
+          <PrimaryButton
+            url="https://icpcoins.com/"
+            isExternal={true}
+            trailingIcon={<ArrowForwardIcon />}
+          >
+            icpcoins.com
+          </PrimaryButton>
         </Box>
       </Flex>
 
@@ -59,7 +67,7 @@ export default function IcpCoinsSection() {
         p={8}
         display={{ base: "none", md: "flex" }}
       >
-        <AspectRatio ratio={16/9} width={"100%"}>
+        <AspectRatio ratio={16 / 9} width={"100%"}>
           <Image
             src="/assets/images/icpcoins_ss_dark.png"
             alt="Web Technology Image"
@@ -68,12 +76,10 @@ export default function IcpCoinsSection() {
             width="100%"
             height="100%"
             borderRadius="md" // Added to make the edges rounded
-            _hover={
-                {
-                    transform: "scale(1.5)",
-                    transition: "all 0.3s ease",
-                }
-            }
+            _hover={{
+              transform: "scale(1.5)",
+              transition: "all 0.3s ease",
+            }}
           />
         </AspectRatio>
       </Flex>
