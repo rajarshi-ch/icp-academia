@@ -6,17 +6,21 @@ import {
   Text,
   Image,
   useColorModeValue,
+  AspectRatio,
 } from "@chakra-ui/react";
 import SearchBar, { SearchBarProps } from "../input/search-bar";
 import { BodyText, CustomH1, CustomH2 } from "../styled-text";
 
-export default function GlossaryHero({ query, setQuery, handleSearch } : SearchBarProps) {
-  
-const offset = 10;
+export default function GlossaryHero({
+  query,
+  setQuery,
+  handleSearch,
+}: SearchBarProps) {
+  const offset = 10;
   return (
     <Flex
       position={"relative"}
-      height={{ base : 'fit-content' , md: "36vh"}} // Reduced height
+      height={{ base: "fit-content", md: "46vh" }} // Reduced height
       width={"100%"}
       bg={useColorModeValue("#ECF5F9", "transparent")}
       borderRadius="3xl"
@@ -44,12 +48,17 @@ const offset = 10;
             is the leading site for all things iCP. Read a new term that you
             want more context on? Just look it up here.
           </BodyText>
-          <SearchBar {...{query, setQuery, handleSearch}}/>
+          <SearchBar {...{ query, setQuery, handleSearch }} />
         </Box>
       </Flex>
 
       {/* Right half with GIF background */}
-      <Flex flex={1} position={"relative"} alignItems={"center"} display={{base : 'none' , md : 'flex'}}>
+      <Flex
+        flex={1}
+        position={"relative"}
+        alignItems={"center"}
+        display={{ base: "none", md: "flex" }}
+      >
         <Box
           as="span"
           fontSize="200px" // Adjust size as needed
@@ -73,22 +82,27 @@ const offset = 10;
           color="transparent"
           display="inline-block"
           position="absolute"
-          bottom={-24}
-          right={offset - 7}
+          bottom={-18}
+          right={offset - 15}
         >
           O
         </Box>
-        <Image
-          src="/assets/images/img_glossary.webp"
-          alt="Web Technology Image"
-          objectFit="cover"
-          objectPosition="center"
-          width="75%"
+        <AspectRatio
+          ratio={0.9}
+          width={"350px"}
           position="absolute"
-        //   top={10}
+          //   top={10}
           left={14 - offset}
-          
-        />
+          top={0}
+        >
+          <Image
+            src="/assets/images/img_glossary.webp"
+            alt="Web Technology Image"
+            objectFit="cover"
+            objectPosition="center"
+            width="75%"
+          />
+        </AspectRatio>
       </Flex>
     </Flex>
   );
