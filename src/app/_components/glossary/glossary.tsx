@@ -49,10 +49,12 @@ export default function Glossary({
   };
 
   useEffect(() => {
+   if(glossaryItems.length > 0 && query.length > 0){
     const filtered = glossaryItems.filter((term) =>
       term.title.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredTerms(filtered);
+   }
   }, [query, glossaryItems]);
 
   useEffect(() => {
