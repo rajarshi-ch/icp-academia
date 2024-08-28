@@ -47,8 +47,7 @@ export default function GlossaryListSection({
         <Flex flex={4}>
           <VStack alignItems="flex-start">
             {glossaryItems.map((term) => (
-              <Link href={`/glossary/${term.slug}`} key={term.title} passHref>
-                <ChakraLink textDecoration="none" _hover={{ bg: "lightgray" }}>
+              <Link href={`/glossary/${term.slug}`} key={term.slug} passHref>
                   <Box
                     p={4}
                     width={{ base: "100%", md: "700px" }}
@@ -64,8 +63,7 @@ export default function GlossaryListSection({
                       {term.title}
                     </Text>
                     <BodyText textAlign="left">{term.description}</BodyText>
-                  </Box>
-                </ChakraLink>
+                  </Box>              
               </Link>
             ))}
           </VStack>
