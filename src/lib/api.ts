@@ -44,9 +44,9 @@ export function getGlossaryItemBySlug(slug: string) {
 
 export function getAllGlossaryItems(): GlossaryItem[] {
   const slugs = getGlossarySlugs();
+  
   const glossary = slugs
     .map((slug) => getGlossaryItemBySlug(slug))
-    // sort posts by date in descending order
     .sort((post1, post2) => (post1.title > post2.title ? -1 : 1));
   return glossary;
 }

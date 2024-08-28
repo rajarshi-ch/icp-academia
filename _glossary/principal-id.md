@@ -2,7 +2,7 @@
 slug: "principal-id"
 title: "Principal ID"
 description: "Principals are generic ID which can be used to Identify and authenticate with assets or services on the Internet Computer"
-content: "On the Internet Computer (IC), a groundbreaking blockchain designed for limitless scalability and speed, understanding the concept of a "Principal ID" is crucial. This unique identifier is an important concept in the ICP blockchain's approach to security, identity, and asset management."
+content: "On the Internet Computer (IC), a groundbreaking blockchain designed for limitless scalability and speed, understanding the concept of a \"Principal ID\" is crucial. This unique identifier is an important concept in the ICP blockchain's approach to security, identity, and asset management."
 difficulty: "Intermediate"
 tags: ["Web3", "Identity", "Decentralization", "ICP"]
 ---

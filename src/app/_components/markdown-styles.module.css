@@ -1,5 +1,5 @@
 .markdown {
-  font-size: 1.4rem; /* equivalent to text-lg */
+  font-size: 1.2rem; /* equivalent to text-lg */
   line-height: 1.625; /* equivalent to leading-relaxed */
   font-family: 'inter', sans-serif;
 }
@@ -11,6 +11,10 @@
   margin-top: 1.8rem; /* equivalent to my-6 */
   margin-bottom: 1.5rem; /* equivalent to my-6 */
   font-weight: 400;
+}
+
+.markdown ul {
+  list-style-position: inside;
 }
 
 .markdown h2 {
@@ -29,6 +33,6 @@
 }
 
 .markdown a {
-  color: blue;
+  color: #90cdf4;
   text-decoration: underline; /* Optional: to underline the links */
 }

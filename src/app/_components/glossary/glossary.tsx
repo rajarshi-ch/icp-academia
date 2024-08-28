@@ -54,6 +54,8 @@ export default function Glossary({
       term.title.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredTerms(filtered);
+   } else {
+    setFilteredTerms(glossaryItems);
    }
   }, [query, glossaryItems]);
 
